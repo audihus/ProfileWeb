@@ -36,7 +36,7 @@ function upload_foto($File){
 	}else{
 		//Create new filename:
         $NewName = date("YmdHis"). '.' . $FileExt;
-        $UploadDestination = "assets/img/". $NewName; 
+        $UploadDestination = "img/". $NewName; 
 
 		if (move_uploaded_file($TmpLocation, $UploadDestination)) {
 			//echo "The file has been uploaded.";

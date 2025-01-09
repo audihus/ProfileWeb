@@ -7,7 +7,7 @@ $hasil1 = $conn->query($sql1);
 $jumlah_article = $hasil1->num_rows;
 
 //query untuk mengambil data gallery
-$sql2 = "SELECT gambar FROM article WHERE gambar !='' AND gambar IS NOT NULL";
+$sql2 = "SELECT * FROM gallery ORDER BY tanggal DESC";
 $hasil2 = $conn->query($sql2);
 
 //menghitung jumlah baris data gallery

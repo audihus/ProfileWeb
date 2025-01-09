@@ -2,8 +2,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th class="w-25">Judul</th>
-                        <th class="w-75">Isi</th>
+                        <th class="w-5">Tanggal</th>
                         <th class="w-25">Gambar</th>
                         <th class="w-25">Aksi</th>
                     </tr>
@@ -16,7 +15,7 @@
                     $limit_start = ($hlm - 1) * $limit;
                     $no = $limit_start + 1;
 
-                    $sql = "SELECT * FROM article ORDER BY tanggal DESC LIMIT $limit_start, $limit";
+                    $sql = "SELECT * FROM gallery ORDER BY tanggal DESC LIMIT $limit_start, $limit";
                     $hasil = $conn->query($sql);
 
                     $no = 1;
@@ -25,11 +24,9 @@
                         <tr>
                             <td><?= $no++ ?></td>
                             <td>
-                                <strong><?= $row["judul"] ?></strong>
-                                <br>pada : <?= $row["tanggal"] ?>
+                                pada : <?= $row["tanggal"] ?>
                                 <br>oleh : <?= $row["username"] ?>
                             </td>
-                            <td><?= $row["isi"] ?></td>
                             <td>
                                 <?php
                                 if ($row["gambar"] != '') {
@@ -49,19 +46,13 @@
                                   <div class="modal-dialog">
                                       <div class="modal-content">
                                           <div class="modal-header">
-                                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Article</h1>
+                                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Gallery</h1>
                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                           </div>
                                           <form method="post" action="" enctype="multipart/form-data">
                                               <div class="modal-body">
                                                   <div class="mb-3">
-                                                      <label for="formGroupExampleInput" class="form-label">Judul</label>
-                                                      <input type="hidden" name="id" value="<?= $row["id"] ?>">
-                                                      <input type="text" class="form-control" name="judul" placeholder="Tuliskan Judul Artikel" value="<?= $row["judul"] ?>" required>
-                                                  </div>
-                                                  <div class="mb-3">
-                                                      <label for="floatingTextarea2">Isi</label>
-                                                      <textarea class="form-control" placeholder="Tuliskan Isi Artikel" name="isi" required><?= $row["isi"] ?></textarea>
+                                                      <input type="hidden" name="id" value="<?=$row["id"] ?>">
                                                   </div>
                                                   <div class="mb-3">
                                                       <label for="formGroupExampleInput2" class="form-label">Ganti Gambar</label>
@@ -96,13 +87,13 @@
                                   <div class="modal-dialog">
                                       <div class="modal-content">
                                           <div class="modal-header">
-                                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Konfirmasi Hapus Article</h1>
+                                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Konfirmasi Hapus Gambar</h1>
                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                           </div>
                                           <form method="post" action="" enctype="multipart/form-data">
                                               <div class="modal-body">
                                                   <div class="mb-3">
-                                                      <label for="formGroupExampleInput" class="form-label">Yakin akan menghapus artikel "<strong><?= $row["judul"] ?></strong>"?</label>
+                                                      <label for="formGroupExampleInput" class="form-label">Yakin akan menghapus Gambar?</label>
                                                       <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                                       <input type="hidden" name="gambar" value="<?= $row["gambar"] ?>">
                                                   </div>
@@ -124,11 +115,11 @@
                 </tbody>
             </table>
             <?php 
-            $sql1 = "SELECT * FROM article";
+            $sql1 = "SELECT * FROM gallery";
             $hasil1 = $conn->query($sql1); 
             $total_records = $hasil1->num_rows;
             ?>
-            <p>Total article : <?php echo $total_records; ?></p>
+            <p>Total Gallery : <?php echo $total_records; ?></p>
             <nav class="mb-2">
                 <ul class="pagination justify-content-end">
                 <?php

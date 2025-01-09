@@ -113,7 +113,7 @@ include "koneksi.php";
         ?>
           <div class="col">
             <div class="card h-100">
-              <img src="assets/img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+              <img src="img/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title"><?= $row["judul"]?></h5>
                 <p class="card-text">
@@ -142,14 +142,14 @@ include "koneksi.php";
         <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
           <?php 
-            $sql = "SELECT gambar FROM article where gambar !='' AND gambar IS NOT NULL";
+            $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
             $hasil = $conn->query($sql);
             $id=1;
             while ($row =$hasil->fetch_assoc()) {
               if($id==1){?>
               <div class="carousel-item active">
               <img
-                src="assets/img/<?= $row["gambar"]?>"
+                src="img/<?= $row["gambar"]?>"
                 class="d-block w-100"
                 alt="..."
               />
@@ -157,7 +157,7 @@ include "koneksi.php";
               <?php $id+=1; }else{?>
                 <div class="carousel-item">
               <img
-                src="assets/img/<?= $row["gambar"]?>"
+                src="img/<?= $row["gambar"]?>"
                 class="d-block w-100"
                 alt="..."
               />
