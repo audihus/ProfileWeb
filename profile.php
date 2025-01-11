@@ -34,9 +34,7 @@ $row = $hasil->fetch_assoc();
                     <input type="hidden" name="gambar_lama" value="<?= $row["foto"] ?>">
                 </div>
             </div>
-            <div class="modal-footer">
-                <input type="submit" value="simpan" name="simpan" class="btn btn-primary">
-            </div>
+            <input type="submit" value="simpan" name="simpan" class="btn btn-primary">
         </form>            
         </div>
     </div>

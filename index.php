@@ -280,9 +280,11 @@ include "koneksi.php";
               src="assets\img\IMG_20200229_170101_074.jpg"
               class="rounded-circle border shadow"
               width="300"
+              id="profileImage"
+              style="cursor: pointer;"
             />
           </div>
-          <div class="p-md-5 text-sm-start">
+          <div class="p-md-5 text-sm-start" id="textSection">
             <h3 class="lead">A11.2023.15143</h3>
             <h1 class="fw-bold">Audi Husen Mustofa</h1>
             Program Studi Teknik Informatika<br />
@@ -298,13 +300,13 @@ include "koneksi.php";
     <footer id="footer" class="text-center p-5">
       <div>
         <a href="https://www.instagram.com/udinusofficial"
-          ><i class="bi bi-instagram h2 p-2"></i
+          ><i class="bi bi-instagram h2 p-2 text-dark"></i
         ></a>
-        <a href="https://twitter.com/udinusofficial"
-          ><i class="bi bi-twitter h2 p-2"></i
+        <a href="https://twitter.com/udinusofficial "
+          ><i class="bi bi-twitter h2 p-2 text-dark"></i
         ></a>
         <a href="https://wa.me/+62895384205321"
-          ><i class="bi bi-whatsapp h2 p-2"></i
+          ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
       </div>
       <div>Audi Husen Mustofa &copy; 2023</div>
@@ -423,6 +425,21 @@ include "koneksi.php";
           collection2[i].classList.remove("bg-secondary", "text-white");
         }
       };
+    </script>
+    <script>
+      // Ambil elemen gambar dan teks
+      const profileImage = document.getElementById("profileImage");
+      const textSection = document.getElementById("textSection");
+
+      // Tambahkan event listener untuk klik pada gambar
+      profileImage.addEventListener("click", () => {
+        // Toggle visibilitas teks
+        if (textSection.style.display === "none") {
+          textSection.style.display = "block"; // Tampilkan teks
+        } else {
+          textSection.style.display = "none"; // Sembunyikan teks
+        }
+      });
     </script>
   </body>
 </html>

@@ -31,6 +31,19 @@
             </div>
         </div>
         <!-- Akhir Modal Tambah-->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">Gambar Besar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modalImage" src="" class="img-fluid" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -53,6 +66,12 @@ $(document).ready(function(){
     var hlm = $(this).attr("id");
     load_data(hlm);
     });
+    $(document).on('click', '.image-thumbnail', function() {
+            var imageUrl = $(this).data('large'); // Ambil URL gambar besar dari atribut data-large
+            $('#modalImage').attr('src', imageUrl); // Set gambar besar pada modal
+            var imageModal = new bootstrap.Modal($('#imageModal')); // Inisialisasi modal
+            imageModal.show(); // Tampilkan modal
+        });
 });
 </script>
 

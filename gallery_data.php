@@ -2,9 +2,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th>No</th>
-                        <th class="w-5">Tanggal</th>
-                        <th class="w-25">Gambar</th>
-                        <th class="w-25">Aksi</th>
+                        <th class="w-25">Tanggal</th>
+                        <th class="w-50">Gambar</th>
+                        <th class="w-50">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@
                                 if ($row["gambar"] != '') {
                                     if (file_exists('img/' . $row["gambar"] . '')) {
                                 ?>
-                                        <img src="img/<?= $row["gambar"] ?>" width="100">
+                                        <img src="img/<?= $row["gambar"] ?>" width="100" class="image-thumbnail" alt="Thumbnail Image" data-large="img/<?= $row["gambar"] ?>">
                                 <?php
                                     }
                                 }

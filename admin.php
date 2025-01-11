@@ -107,16 +107,16 @@ if (!isset($_SESSION['username'])) {
     </section>
     <!-- content end -->
     <!-- footer begin -->
-    <footer id="footer" class="text-center p-5 bg-danger-subtle" style="margin-bottom: 0%;" >
+    <footer id="footer" class="text-center p-3 bg-danger-subtle" style="margin-bottom: 0%;" >
       <div>
         <a href="https://www.instagram.com/udinusofficial"
-          ><i class="bi bi-instagram h2 p-2"></i
+          ><i class="bi bi-instagram h2 p-2 text-dark"></i
         ></a>
         <a href="https://twitter.com/udinusofficial"
-          ><i class="bi bi-twitter h2 p-2"></i
+          ><i class="bi bi-twitter h2 p-2 text-dark"></i
         ></a>
         <a href="https://wa.me/+62895384205321"
-          ><i class="bi bi-whatsapp h2 p-2"></i
+          ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
       </div>
       <div class="bg-danger-subtle">Audi Husen Mustofa &copy; 2023</div>
